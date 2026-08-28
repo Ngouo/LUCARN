@@ -6,5 +6,3 @@ export default defineConfig({
     tailwindcss(),
   ],
 });
-
-VITE_CONFIG_NATIVE_IGNORE_WARNING=true
