@@ -13,7 +13,7 @@ async function loadComponent(elementId, filePath) {
 async function initLayout() {
   // 1. Inserer la navbar et le drawer
   await Promise.all([
-    loadComponent('drawer-container', './public/drawer.html')
+    loadComponent('drawer-container', 'drawer.html')
   ]);
 
   // 2. Attacher les événements une fois le HTML injecté
