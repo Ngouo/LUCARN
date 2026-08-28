@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  /* Inclut tous les thèmes DaisyUI */
+  themes: all; 
+};
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#about{
+    width: 500px;
+    height: 450px;
+}
+
+.tab_content {
+  display: none;
+}
+
+/* On affiche uniquement la section active */
+.tab_content.active {
+  display: block;
+}
+
+/* Style visuel pour indiquer le lien actif */
+.menu-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
+
+.nav_menu{
+    width: 70%;
+}
+
+nav{
+    background-color: whitesmoke;
+}
+
+.cover_image{
+    background-image: url("./images/voiture1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#menu{
+    margin-right: 12rem;
+}
+
+#btn_nav{
+    font-weight: bold;
+}
