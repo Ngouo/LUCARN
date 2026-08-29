@@ -10,7 +10,7 @@
     <title>LUCARN LANDING PAGE</title>
 </head>
 
-<body>
+<body class="overflow-x-hidden w-full">
 
     <!-- barre de navigation -->
 
@@ -75,27 +75,125 @@
 </a>
 
      <!--  -->
-   <div class="partie3 lg:w-full lg:296 pt-5 lg:flex gap-4 mx-auto lg:flex-cols-2">
-        <div class="reveal-item lg:w-1/2 w-4/5 h-35 p-2 mx-auto lg:p-20 lg:mt-6">
-            <img src="./images/img2.jpg" alt="" class="lg:w-full mx-auto lg:mx-auto h-70 lg:h-100 rounded-2xl">
+     <div class="offres p-12 lg:p-20" data-theme="corporate">
+      <h1 class="text-4xl font-bold text-center">NOS OFFRES</h1>
+
+      <div class="w-full p-5 mx-auto text-justify text-4xs">
+        <p>Découvrez nos différentes formules de lavage, conçues pour répondre 
+          à chaque besoin et à chaque niveau d’entretien.
+           Du nettoyage rapide à la formule complète, nous proposons des 
+           prestations adaptées à votre véhicule, votre budget et vos exigences.Choisissez simplement l’offre qui vous convient, 
+           nous nous chargeons 
+          du reste directement à votre domicile ou sur votre lieu de travail.
+        </p>
+      </div>
+
+      <div class="lg:grid lg:grid-cols-3 lg:p-6 lg:mx-auto lg:w-9/10 gap-18">
+          <div class="card w-75 mx-auto lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
+              <div class="card-body">
+                <div class="">
+                  <h2 class="text-2xl font-bold">LE LAVAGE CLASSIQUE</h2>
+                  <h3 class="text-xl">(Express à domicile)</h3>
+                </div>
+                <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
+                  <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Nettoyage extérieur</span>
+                  </li>
+                  <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Pneus brillants</span>
+                  </li>
+                  <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Dépoussiérage & vitres</span>
+                  </li>
+                  <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Lavage et séchage soignés</span>
+                  </li>
+                  <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <span>Adapté à tous types de véhicules</span>
+                  </li>
+                </ul>
+                <div class="mt-6">
+                  <button class="btn btn-primary btn-block">Subscribe</button>
+                </div>
+              </div>
+          </div>
+
+          <div class="card w-75 mx-auto mt-3 lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
+            <div class="card-body">
+              <div class="">
+                <h2 class="text-2xl font-bold">LE GRAND NETTOYAGE</h2>
+                <p class="text-xl">Remise en état</p>
+              </div>
+              <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Lavage complet</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Shampoing des sièges en tissu</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Traitement plastiques</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Finitions pour un véhicule impeccable</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Entretien des sièges et tapis</span>
+                </li>
+              </ul>
+              <div class="mt-6">
+                <button class="btn btn-primary btn-block">Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card w-75 mx-auto mt-3 lg:w-90 bg-base-100 shadow-xl border-2 border-blue-200">
+            <div class="card-body">
+              <span class="badge badge-xs badge-warning">Most Popular</span>
+              <div class="">
+                <h2 class="text-2xl font-bold">ABONNEMENT MENSUEL</h2>
+                <p class="text-xl">Tranquillité</p>
+              </div>
+              <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Jusqu’à 4 lavages par mois</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Entretien régulier de votre véhicule</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Intérieur & extérieur selon la formule choisie</span>
+                </li>
+                <li>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                  <span>Abonnement renouvelable chaque mois</span>
+                </li>
+              </ul>
+              <div class="mt-6">
+                <button class="btn btn-primary btn-block">Subscribe</button>
+              </div>
+            </div>
+          </div>
+      
         </div>
-        <div class="reveal-item lg:p-2 mt-60 lg:mt-2 lg:h-56 lg:w-1/2 h-35">
-             <h1 class="text-4xl font-bold mt-5 text-center">A PROPOS DE NOUS</h1>
-           <p class="w-2/3 mx-auto mt-5">Notre nouvelle laverie automobile révolutionne le lavage de véhicules en proposant un service professionnel directement à domicile ou sur le lieu de travail du client.
-            Plus besoin de perdre du temps dans les files d’attente ou de se déplacer jusqu’à une station de lavage : nous venons à vous. Grâce à une équipe dynamique, du matériel 
-            adapté et des produits de qualité, nous assurons un nettoyage soigné et efficace de votre véhicule, où que vous soyez.
-            Notre concept. Nous proposons une solution de lavage automobile pratique, rapide et accessible, pensée pour les particuliers 
-            comme pour les professionnels. Le client prend simplement rendez-vous, indique son emplacement et choisit la prestation qui lui convient. 
-            Notre équipe se déplace ensuite sur place pour prendre soin de son véhicule.
-            Notre avantage principal : le lavage à domicile
-            Notre force réside dans le gain de temps et le confort que nous offrons à nos clients. Pendant que leur véhicule est nettoyé, ils peuvent 
-            continuer leurs activités, travailler, se reposer ou s'occuper de leurs tâches quotidiennes.</p>
-        </div>
-      </div> 
+     </div>
      <!--  -->
 
     <!-- Partie 2 -->
-      <div class="partie4 lg:h-135 h-210 p-6  lg:mt-95 mt-160 border" data-theme="night">
+      <div class="partie4 lg:h-135 h-230 p-6  lg:mt-95 mt-160 border" data-theme="night">
           <h1 class="titre font-extrabold text-center lg:text-4xl text-4xl">CE QUE NOUS VOUS PROPOSONS</h1>
         
           <div class="mx-auto p-5 lg:flex lg:flex-cols-2 gap-6">
@@ -167,7 +265,7 @@
           <h1 class="text-4xl font-bold text-center">NOS ENGAGEMENTS</h1>
           <div class=" grid grid-cols-2 lg:mt-5 mt-5 lg:grid lg:grid-cols-3 mb-2 gap-1">
 
-            <div class="card bg-base-100 w-95/100 h-65 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="card bg-base-100 w-95/100 h-78 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-10">
                 <img
                   src="./src/images/accueil.png"
@@ -180,7 +278,7 @@
               </div>
             </div>
 
-            <div class="card bg-base-100 w-95/100 h-65 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="card bg-base-100 w-95/100 h-78 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-10">
                 <img
                   src="./src/images/horloge.png"
@@ -188,12 +286,12 @@
                   class="rounded-xl w-20 h-20" />
               </figure>
               <div class="card-body items-center text-center">
-                <h2 class="card-title">Gain de temps :</h2>
+                <h2 class="card-title">Gain de temps</h2>
                 <p> plus besoin de se déplacer ou d'attendre </p>
               </div>
             </div>
 
-            <div class="card bg-base-100 w-95/100  h-65 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="card bg-base-100 w-95/100  h-78 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-10">
                 <img
                   src="./src/images/prestations-de-service.png"
@@ -206,7 +304,7 @@
               </div>
             </div>
 
-            <div class="card bg-base-100 w-95/100  h-65 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="card bg-base-100 w-95/100  h-78 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-10">
                 <img
                   src="./src/images/reunion.png"
@@ -219,7 +317,7 @@
               </div>
             </div>
 
-            <div class="card bg-base-100 w-95/100  h-65 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="card bg-base-100 w-95/100  h-78 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-10">
                 <img
                   src="./src/images/produits-de-nettoyage.png"
@@ -232,7 +330,7 @@
               </div>
             </div>
 
-            <div class="card bg-base-100 w-95/100  h-65 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="card bg-base-100 w-95/100  h-78 lg:w-96 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-10">
                 <img
                   src="./src/images/outils.png"
@@ -253,121 +351,7 @@
 
      <!-- Partie 4 --> 
 
-     <div class="offres p-12 lg:p-20" data-theme="dark">
-      <h1 class="text-4xl font-bold text-center">NOS OFFRES</h1>
-
-      <div class="w-full p-5 mx-auto text-center text-xl">
-        <p>Découvrez nos différentes formules de lavage, conçues pour répondre 
-          à chaque besoin et à chaque niveau d’entretien.
-           Du nettoyage rapide à la formule complète, nous proposons des 
-           prestations adaptées à votre véhicule, votre budget et vos exigences. 
-          Choisissez simplement l’offre qui vous convient, nous nous chargeons 
-          du reste directement à votre domicile ou sur votre lieu de travail.
-        </p>
-      </div>
-
-      <div class="lg:grid lg:grid-cols-3 p-4 lg:p-6 lg:mx-auto lg:w-9/10 gap-18">
-          <div class="card w-90 mx-auto lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
-              <div class="card-body">
-                <div class="">
-                  <h2 class="text-2xl font-bold">LE LAVAGE CLASSIQUE</h2>
-                  <h3 class="text-xl">(Express à domicile)</h3>
-                </div>
-                <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                    <span>Nettoyage extérieur</span>
-                  </li>
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                    <span>Pneus brillants</span>
-                  </li>
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                    <span>Dépoussiérage & vitres</span>
-                  </li>
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                    <span>Lavage et séchage soignés</span>
-                  </li>
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                    <span>Adapté à tous types de véhicules</span>
-                  </li>
-                </ul>
-                <div class="mt-6">
-                  <button class="btn btn-primary btn-block">Subscribe</button>
-                </div>
-              </div>
-          </div>
-
-          <div class="card w-90 mx-auto mt-3 lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
-            <div class="card-body">
-              <div class="">
-                <h2 class="text-2xl font-bold">LE GRAND NETTOYAGE</h2>
-                <p class="text-xl">Remise en état</p>
-              </div>
-              <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Lavage complet</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Shampoing des sièges en tissu</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Traitement plastiques</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Finitions pour un véhicule impeccable</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Entretien des sièges et tapis</span>
-                </li>
-              </ul>
-              <div class="mt-6">
-                <button class="btn btn-primary btn-block">Subscribe</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="card w-90 mx-auto mt-3 lg:w-90 bg-base-100 shadow-xl border-2 border-blue-200">
-            <div class="card-body">
-              <span class="badge badge-xs badge-warning">Most Popular</span>
-              <div class="">
-                <h2 class="text-2xl font-bold">ABONNEMENT MENSUEL</h2>
-                <p class="text-xl">Tranquillité</p>
-              </div>
-              <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Jusqu’à 4 lavages par mois</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Entretien régulier de votre véhicule</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Intérieur & extérieur selon la formule choisie</span>
-                </li>
-                <li>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                  <span>Abonnement renouvelable chaque mois</span>
-                </li>
-              </ul>
-              <div class="mt-6">
-                <button class="btn btn-primary btn-block">Subscribe</button>
-              </div>
-            </div>
-          </div>
-      
-        </div>
-     </div>
+     
 
      <!-- Fin Partie 4  -->
 
