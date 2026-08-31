@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Petite animation subtile avec Anime.js lors de l'activation
         anime({
           targets: card,
-          scale: [1, 1.08],
+          scale: [1, 1.05],
           duration: 400,
           easing: 'easeOutQuad'
         });
