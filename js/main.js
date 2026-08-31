@@ -94,3 +94,86 @@ document.addEventListener(
         });
       });
     });
+
+
+
+    
+
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('carousel-track');
+  const items = document.querySelectorAll('.carousel-item-card');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  if (!track || items.length === 0) return;
+
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  const autoPlayDelay = 3500; // 3.5 secondes entre chaque défilement
+
+  // Calcul de la distance de déplacement (Largeur d'une carte + le gap de 24px)
+  function getStepWidth() {
+    const itemWidth = items[0].getBoundingClientRect().width;
+    const gap = 24; // correspond à gap-6 (6 * 4px)
+    return itemWidth + gap;
+  }
+
+  // Fonction d'animation de la piste
+  function moveTrack(index) {
+    const stepWidth = getStepWidth();
+    
+    anime({
+      targets: track,
+      translateX: -(index * stepWidth),
+      easing: 'easeOutCubic',
+      duration: 600
+    });
+  }
+
+  function nextSlide() {
+    // Si on arrive à la fin, on boucle au début
+    if (currentIndex >= items.length - 1) {
+      currentIndex = 0;
+    } else {
+      currentIndex++;
+    }
+    moveTrack(currentIndex);
+  }
+
+  function prevSlide() {
+    if (currentIndex <= 0) {
+      currentIndex = items.length - 1;
+    } else {
+      currentIndex--;
+    }
+    moveTrack(currentIndex);
+  }
+
+  // Gestion du défilement automatique
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(nextSlide, autoPlayDelay);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) clearInterval(autoplayTimer);
+  }
+
+  // Événements des boutons
+  nextBtn?.addEventListener('click', () => {
+    nextSlide();
+    startAutoplay(); // Réinitialise le timer au clic
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    prevSlide();
+    startAutoplay();
+  });
+
+  // Pause au survol de la souris
+  track.parentElement.addEventListener('mouseenter', stopAutoplay);
+  track.parentElement.addEventListener('mouseleave', startAutoplay);
+
+  // Lancement automatique au chargement
+  startAutoplay();
+});
