@@ -97,7 +97,7 @@ document.addEventListener(
 
 
 
-    
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carousel-track');
@@ -176,4 +176,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lancement automatique au chargement
   startAutoplay();
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.auto-hover-card');
+  if (cards.length === 0) return;
+
+  let currentCardIndex = 0;
+  let hoverTimer = null;
+  const intervalTime = 5000; // 10 secondes par carte
+
+  // Fonction pour activer l'effet hover sur la carte actuelle
+  function activateCard(index) {
+    cards.forEach((card, idx) => {
+      if (idx === index) {
+        card.classList.add('is-active');
+        
+        // Petite animation subtile avec Anime.js lors de l'activation
+        anime({
+          targets: card,
+          scale: [1, 1.08],
+          duration: 400,
+          easing: 'easeOutQuad'
+        });
+      } else {
+        card.classList.remove('is-active');
+        
+        // Remettre les autres cartes à leur taille normale
+        anime({
+          targets: card,
+          scale: 1,
+          duration: 300,
+          easing: 'easeOutQuad'
+        });
+      }
+    });
+  }
+
+  // Passer à la carte suivante
+  function nextCard() {
+    currentCardIndex = (currentCardIndex + 1) % cards.length;
+    activateCard(currentCardIndex);
+  }
+
+  // Démarrer la boucle automatique
+  function startAutoHover() {
+    stopAutoHover();
+    activateCard(currentCardIndex); // Active la 1ère immédiatement
+    hoverTimer = setInterval(nextCard, intervalTime);
+  }
+
+  // Pauser la boucle
+  function stopAutoHover() {
+    if (hoverTimer) clearInterval(hoverTimer);
+  }
+
+  // Gestion du survol par l'utilisateur (Pause temporaire)
+  cards.forEach((card, idx) => {
+    card.addEventListener('mouseenter', () => {
+      stopAutoHover();
+      currentCardIndex = idx;
+      activateCard(currentCardIndex);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      startAutoHover();
+    });
+  });
+
+  // Lancer l'animation automatique
+  startAutoHover();
 });
