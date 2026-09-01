@@ -120,10 +120,10 @@
         time,
         fullname,
         phone
-    };
+            };
 
     // Envoi silencieux vers Google Sheets
-    await saveBookingToSheets(bookingData);
+        await saveBookingToSheets(bookingData);
 
         const message = `Bonjour LUCARN SERVICES SARL !\n\n` +
             `Je souhaite valider ma réservation *#${bookingId}* :\n\n` +
@@ -222,7 +222,7 @@
     }
 
     // Envoi final vers WhatsApp
-    function sendToWhatsApp2() {
+    async function sendToWhatsApp2() {
         const fullname2 = document.getElementById('fullname2').value;
         const phone2 = document.getElementById('phone2').value;
 
@@ -250,10 +250,10 @@
         time,
         fullname,
         phone
-    };
+            };
 
     // Envoi silencieux vers Google Sheets
-    await saveBookingToSheets(bookingData);
+         await saveBookingToSheets(bookingData);
 
         const message2 = `Bonjour LUCARN SERVICES SARL !\n\n` +
             `Je souhaite valider ma réservation *#${bookingId2}* :\n\n` +
