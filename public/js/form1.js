@@ -1,4 +1,5 @@
     const WHATSAPP_NUMBER = "237652944054"; // Numéro LUCARN
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8o_xqLws7Q_a03Ktroh8sqWMV2loLv7J3GDiTIy7nu2Z2lQU9PT6OpZE3HaeG1KLfyg/exec";
 
     let currentStep = 1;
 
@@ -77,8 +78,21 @@
             `<b>Prestation :</b> ${service}<br><b>Lieu :</b> ${location}<br><b>Rendez-vous :</b> ${date} à ${time}`;
     }
 
+    async function saveBookingToSheets(data) {
+    try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+    } catch (err) {
+        console.error("Erreur lors de l'enregistrement Sheets :", err);
+    }
+}
+
     // Envoi final vers WhatsApp
-    function sendToWhatsApp() {
+    async function sendToWhatsApp() {
         const fullname = document.getElementById('fullname').value;
         const phone = document.getElementById('phone').value;
 
@@ -94,7 +108,22 @@
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
 
-        const bookingId = Math.floor(1000 + Math.random() * 9000);
+        const bookingId = "LUC" + Math.floor(1000 + Math.random() * 9000);
+
+        const bookingData = {
+        id: bookingId,
+        vehicleType: "Berline",
+        service,
+        price,
+        location,
+        date,
+        time,
+        fullname,
+        phone
+    };
+
+    // Envoi silencieux vers Google Sheets
+    await saveBookingToSheets(bookingData);
 
         const message = `Bonjour LUCARN SERVICES SARL !\n\n` +
             `Je souhaite valider ma réservation *#${bookingId}* :\n\n` +
@@ -209,7 +238,22 @@
         const date2 = document.getElementById('date2').value;
         const time2 = document.getElementById('time2').value;
 
-        const bookingId2 = Math.floor(1000 + Math.random() * 9000);
+        const bookingId = "LUC" + Math.floor(1000 + Math.random() * 9000);
+
+        const bookingData = {
+        id: bookingId,
+        vehicleType: "SUV / 4 x 4",
+        service,
+        price,
+        location,
+        date,
+        time,
+        fullname,
+        phone
+    };
+
+    // Envoi silencieux vers Google Sheets
+    await saveBookingToSheets(bookingData);
 
         const message2 = `Bonjour LUCARN SERVICES SARL !\n\n` +
             `Je souhaite valider ma réservation *#${bookingId2}* :\n\n` +
