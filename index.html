@@ -277,26 +277,26 @@
       <div class="partie4 lg:h-135 h-230 p-6  lg:mt-10 mt-16 border" data-theme="night">
           <h1 class="titre font-extrabold text-center lg:text-4xl text-4xl">CE QUE NOUS VOUS PROPOSONS</h1>
         
-          <div class="mx-auto p-5 lg:flex lg:flex-cols-2 gap-6">
+          <div class="mx-auto w-full p-5 lg:flex lg:flex-cols-2 gap-6">
           <!-- 1. BARRE DE 5 BOUTONS -->
-            <div class="flex flex-col justify-center gap-5 lg:w-1/2">     
+            <div class="flex flex-col justify-center gap-5 lg:w-1/2 w-full">     
               <!-- Attribut data-target servant d'identifiant vers le contenu -->
-              <button data-target="content-1" class="tab-btn btn btn-outline mx-auto btn-primary w-2/3 lg:w-2/3 h-12 text-left justify-start active">
+              <button data-target="content-1" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start active">
                 Injecteur - Extracteur
               </button>
-              <button data-target="content-2" class="tab-btn btn btn-outline mx-auto btn-primary w-2/3 lg:w-2/3 h-12 text-left justify-start">
+              <button data-target="content-2" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start">
                 Detailling
               </button>
-              <button data-target="content-3" class="tab-btn btn btn-outline mx-auto btn-primary w-2/3 lg:w-2/3 h-12 text-left justify-start">
+              <button data-target="content-3" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start">
                 Aspirateur Eau/Poussière
               </button>
-              <button data-target="content-4" class="tab-btn btn btn-outline mx-auto btn-primary w-2/3 lg:w-2/3 h-12 text-left justify-start">
+              <button data-target="content-4" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start">
                 Traitement Anti-odeurs
               </button>
             </div>
 
           <!-- 2. ZONE D'AFFICHAGE UNIQUE (Les contenus s'affichent à cette exacte position) -->
-            <div class="lg:w-2/3 w-full text-center md:col-span-2 bg-base-100 p-6 rounded-2xl shadow-xl">
+            <div class="lg:w-2/3 w-85 text-center md:col-span-2 bg-base-100 p-6 rounded-2xl shadow-xl">
               
               <!-- CONTENU 1 (Visible par défaut) -->
               <div id="content-1" class="content-block space-y-3">
@@ -431,8 +431,41 @@
      <!-- Fin Partie 3 -->
 
      <!-- Partie 4 --> 
-      <div class="partenaires mt-15">
-        <h1 class="text-2xl text-center font-bold">NOS PARTENAIRES</h1>
+      <div class="partenaires mt-25">
+        <h1 class="text-4xl text-center font-bold">NOS PARTENAIRES</h1>
+
+        <div class="w-full overflow-hidden bg-gray-50 py-6 mt-8">
+  <div class="scroll-track">
+    
+    <!-- ================= BLOC 1 (5 IMAGES) ================= -->
+    <div class="flex shrink-0">
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/10/300/200" alt="1"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/20/300/200" alt="2"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/30/300/200" alt="3"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/40/300/200" alt="4"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/50/300/200" alt="5"></div>
+    </div>
+
+    <!-- ================= BLOC 2 (DUPLICATA 1) ================= -->
+    <div class="flex shrink-0" aria-hidden="true">
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/10/300/200" alt="1"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/20/300/200" alt="2"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/30/300/200" alt="3"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/40/300/200" alt="4"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/50/300/200" alt="5"></div>
+    </div>
+
+    <!-- ================= BLOC 3 (DUPLICATA 2) ================= -->
+    <div class="flex shrink-0" aria-hidden="true">
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/10/300/200" alt="1"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/20/300/200" alt="2"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/30/300/200" alt="3"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/40/300/200" alt="4"></div>
+      <div class="px-4"><img class="h-20 w-36 object-cover rounded-lg shadow-sm" src="https://picsum.photos/id/50/300/200" alt="5"></div>
+    </div>
+
+  </div>
+</div>
       </div>
      
 

@@ -59,3 +59,24 @@ nav{
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-color: var(--p, #3b82f6); /* Utilise la couleur primaire */
 }
+
+@keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-33.333333%); /* Décale exactement de 1 bloc sur 3 */
+    }
+  }
+
+  .scroll-track {
+    display: flex;
+    width: max-content;
+    animation: infinite-scroll 18s linear infinite;
+    will-change: transform; /* Optimisation de la fluidité */
+  }
+
+  /* Pause au survol */
+  .scroll-track:hover {
+    animation-play-state: paused;
+  }
