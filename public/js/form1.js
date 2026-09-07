@@ -79,17 +79,17 @@
     }
 
     async function saveBookingToSheets(data) {
-    try {
-        await fetch(GOOGLE_SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data)
-        });
-    } catch (err) {
-        console.error("Erreur lors de l'enregistrement Sheets :", err);
-    }
-}
+        try {
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+        } catch (err) {
+            console.error("Erreur lors de l'enregistrement Sheets :", err);
+        }
+} 
 
     // Envoi final vers WhatsApp
     async function sendToWhatsApp() {
