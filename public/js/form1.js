@@ -3,6 +3,9 @@
 
     let currentStep = 1;
 
+    const zoneSelect = document.getElementById('zone');
+    const landmark = document.getElementById('landmark')
+
     // Mise à jour du Prix en direct
     const serviceSelect = document.getElementById('service');
     const totalPriceDisplay = document.getElementById('totalPrice');
@@ -22,11 +25,10 @@
             }
         }
         if (currentStep === 2) {
-            const location = document.getElementById('location').value;
             const date = document.getElementById('date').value;
             const time = document.getElementById('time').value;
 
-            if (!location || !date || !time) {
+            if (!zoneSelect || !landmark  || !date || !time) {
                 alert("Veuillez remplir le quartier, la date et l'heure.");
                 return;
             }
@@ -68,15 +70,37 @@
         });
     }
 
-    function updateSummary() {
-        const service = serviceSelect.value;
-        const location = document.getElementById('location').value;
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-        
-        document.getElementById('summaryText').innerHTML = 
-            `<b>Prestation :</b> ${service}<br><b>Lieu :</b> ${location}<br><b>Rendez-vous :</b> ${date} à ${time}`;
-    }
+    function updatePrices1() {
+    const serviceOpt = serviceSelect.options[serviceSelect.selectedIndex];
+    const zoneOpt = zoneSelect.options[zoneSelect.selectedIndex];
+
+    const servicePrice = Number(serviceOpt?.getAttribute('data-price') || 0);
+    const transportPrice = Number(zoneOpt?.getAttribute('data-transport') || 0);
+    const total = servicePrice + transportPrice;
+
+    totalPriceDisplay.textContent = `${total.toLocaleString('fr-FR')} FCFA`;
+    
+    // Mettre à jour l'affichage détaillé de l'étape 2
+    document.getElementById('serviceCostDisplay').textContent = `${servicePrice.toLocaleString('fr-FR')} FCFA`;
+    document.getElementById('transportCostDisplay').textContent = `${transportPrice.toLocaleString('fr-FR')} FCFA`;
+    document.getElementById('totalCostDisplay').textContent = `${total.toLocaleString('fr-FR')} FCFA`;
+}
+
+serviceSelect.addEventListener('change', updatePrices1);
+zoneSelect.addEventListener('change', updatePrices1);
+
+
+
+function updateSummary() {
+    const service = serviceSelect.value;
+    const zone = zoneSelect.value;
+    const landmarkValue = landmark.value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    
+    document.getElementById('summaryText').innerHTML = 
+        `<b>Prestation :</b> ${service}<br><b>Zone :</b> ${zone}<br><b>Repère :</b> ${landmarkValue}<br><b>RDV :</b> ${date} à ${time}`;
+}
 
     async function saveBookingToSheets(data) {
         try {
@@ -92,56 +116,69 @@
 } 
 
     // Envoi final vers WhatsApp
-    async function sendToWhatsApp() {
-        const fullname = document.getElementById('fullname').value;
-        const phone = document.getElementById('phone').value;
+   // --- ENVOI DE LA CATEGORIE 1 (BERLINE) VERS GOOGLE SHEETS ET WHATSAPP ---
+async function sendToWhatsApp() {
+    const fullname = document.getElementById('fullname').value;
+    const phone = document.getElementById('phone').value;
 
-        if (!fullname || !phone) {
-            alert("Veuillez renseigner votre nom et votre numéro de téléphone.");
-            return;
-        }
+    if (!fullname || !phone) {
+        alert("Veuillez renseigner votre nom et votre numéro de téléphone.");
+        return;
+    }
 
-        const service = serviceSelect.value;
-        const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
-        const price = selectedOption.getAttribute('data-price');
-        const location = document.getElementById('location').value;
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
+    const service = serviceSelect.value;
+    const selectedServiceOpt = serviceSelect.options[serviceSelect.selectedIndex];
+    const servicePrice = Number(selectedServiceOpt.getAttribute('data-price') || 0);
 
-        const bookingId = "LUC" + Math.floor(1000 + Math.random() * 9000);
+    const zone = zoneSelect.value;
+    const selectedZoneOpt = zoneSelect.options[zoneSelect.selectedIndex];
+    const transportPrice = Number(selectedZoneOpt.getAttribute('data-transport') || 0);
 
-        const bookingData = {
+    const landmark = document.getElementById('landmark').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const totalAmount = servicePrice + transportPrice;
+
+    const bookingId = "LUC" + Math.floor(1000 + Math.random() * 9000);
+
+    const bookingData = {
         id: bookingId,
         vehicleType: "Berline",
-        service,
-        price,
-        location,
-        date,
-        time,
-        fullname,
-        phone
-            };
+        service: service,
+        price: totalAmount,
+        location: `${zone} (${landmark})`,
+        date: date,
+        time: time,
+        fullname: fullname,
+        phone: phone
+    };
 
-    // Envoi silencieux vers Google Sheets
-        await saveBookingToSheets(bookingData);
+    // Envoi des données vers Google Sheets
+    await saveBookingToSheets(bookingData);
 
-        const message = `Bonjour LUCARN SERVICES SARL !\n\n` +
-            `Je souhaite valider ma réservation *#${bookingId}* :\n\n` +
-            ` *Prestation :* ${service}\n` +
-            ` *Montant estimé :* ${Number(price).toLocaleString('fr-FR')} FCFA\n` +
-            ` *Client :* ${fullname} (${phone})\n` +
-            ` *Lieu / Repère :* ${location}\n` +
-            ` *Date & Heure :* ${date} à ${time}\n\n` +
-            `Merci de me transmettre le numéro Mobile Money (OM / MoMo) pour régler l'acompte.`;
+    // Construction du message WhatsApp
+    const message = `Bonjour LUCARN SERVICES SARL !\n\n` +
+        `Je souhaite valider ma réservation *#${bookingId}* :\n\n` +
+        ` *Type de véhicule :* Berline\n` +
+        ` *Prestation :* ${service} (${servicePrice.toLocaleString('fr-FR')} FCFA)\n` +
+        ` *Frais de déplacement :* ${transportPrice.toLocaleString('fr-FR')} FCFA\n` +
+        ` *Montant Total :* ${totalAmount.toLocaleString('fr-FR')} FCFA\n` +
+        ` *Client :* ${fullname} (${phone})\n` +
+        ` *Zone / Repère :* ${zone} - ${landmark}\n` +
+        ` *Date & Heure :* ${date} à ${time}\n\n` +
+        `Merci de me transmettre le numéro Mobile Money (OM / MoMo) pour régler l'acompte.`;
 
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    }
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
+
 
 ///------------------------------------------------------------------------------
 
+
     let currentStep2 = 1;
 
+    const landmark2 = document.getElementById('landmark2')
     const serviceSelect2 = document.getElementById('service2');
     const totalPriceDisplay2 = document.getElementById('totalPrice2');
     console.log(serviceSelect2, totalPriceDisplay2);
@@ -163,13 +200,11 @@
             }
         }
         if (currentStep2 === 2) {
-            const location2 = document.getElementById('location2').value;
             const date2 = document.getElementById('date2').value;
             const time2 = document.getElementById('time2').value;
-            console.log("choix : " + location2, date2, time2);
             
 
-            if (!location2 || !date2 || !time2) {
+            if (!zoneSelect2 || landmark2 || !date2 || !time2) {
                 alert("Veuillez remplir le quartier, la date et l'heure.");
                 return;
             }
@@ -211,62 +246,91 @@
         });
     }
 
-    function updateSummary2() {
-        const service2 = serviceSelect2.value;
-        const location2 = document.getElementById('location2').value;
-        const date2 = document.getElementById('date2').value;
-        const time2 = document.getElementById('time2').value;
-        
-        document.getElementById('summaryText2').innerHTML = 
-            `<b>Prestation :</b> ${service2}<br><b>Lieu :</b> ${location2}<br><b>Rendez-vous :</b> ${date2} à ${time2}`;
-    }
+    const zoneSelect2 = document.getElementById('zone2');
+
+function updatePrices2() {
+    const serviceOpt2 = serviceSelect2.options[serviceSelect2.selectedIndex];
+    const zoneOpt2 = zoneSelect2.options[zoneSelect2.selectedIndex];
+
+    const servicePrice2 = Number(serviceOpt2?.getAttribute('data-price2') || 0);
+    const transportPrice2 = Number(zoneOpt2?.getAttribute('data-transport2') || 0);
+    const total2 = servicePrice2 + transportPrice2;
+
+    totalPriceDisplay2.textContent = `${total2.toLocaleString('fr-FR')} FCFA`;
+
+    // Mettre à jour l'affichage détaillé de l'étape 2
+    document.getElementById('serviceCostDisplay2').textContent = `${servicePrice2.toLocaleString('fr-FR')} FCFA`;
+    document.getElementById('transportCostDisplay2').textContent = `${transportPrice2.toLocaleString('fr-FR')} FCFA`;
+    document.getElementById('totalCostDisplay2').textContent = `${total2.toLocaleString('fr-FR')} FCFA`;
+}
+
+serviceSelect2.addEventListener('change', updatePrices2);
+zoneSelect2.addEventListener('change', updatePrices2);
+
+function updateSummary2() {
+    const service2 = serviceSelect2.value;
+    const zone2 = zoneSelect2.value;
+    const landmarkValue2 = landmark2.value;
+    const date2 = document.getElementById('date2').value;
+    const time2 = document.getElementById('time2').value;
+    
+    document.getElementById('summaryText2').innerHTML = 
+        `<b>Prestation :</b> ${service2}<br><b>Zone :</b> ${zone2}<br><b>Repère :</b> ${landmarkValue2}<br><b>RDV :</b> ${date2} à ${time2}`;
+}
 
     // Envoi final vers WhatsApp
     async function sendToWhatsApp2() {
-        const fullname2 = document.getElementById('fullname2').value;
-        const phone2 = document.getElementById('phone2').value;
+    const fullname2 = document.getElementById('fullname2').value;
+    const phone2 = document.getElementById('phone2').value;
 
-        if (!fullname2 || !phone2) {
-            alert("Veuillez renseigner votre nom et votre numéro de téléphone.");
-            return;
-        }
-
-        const service2 = serviceSelect2.value;
-        const selectedOption2 = serviceSelect2.options[serviceSelect2.selectedIndex];
-        const price2 = selectedOption2.getAttribute('data-price2');
-        const location2 = document.getElementById('location2').value;
-        const date2 = document.getElementById('date2').value;
-        const time2 = document.getElementById('time2').value;
-
-        const bookingId = "LUC" + Math.floor(1000 + Math.random() * 9000);
-
-        const bookingData = {
-        id: bookingId,
-        vehicleType: "SUV / 4 x 4",
-        service,
-        price,
-        location,
-        date,
-        time,
-        fullname,
-        phone
-            };
-
-    // Envoi silencieux vers Google Sheets
-         await saveBookingToSheets(bookingData);
-
-        const message2 = `Bonjour LUCARN SERVICES SARL !\n\n` +
-            `Je souhaite valider ma réservation *#${bookingId2}* :\n\n` +
-            ` *Prestation :* ${service2}\n` +
-            ` *Montant estimé :* ${Number(price2).toLocaleString('fr-FR')} FCFA\n` +
-            ` *Client :* ${fullname2} (${phone})\n` +
-            ` *Lieu / Repère :* ${location2}\n` +
-            ` *Date & Heure :* ${date2} à ${time2}\n\n` +
-            `Merci de me transmettre le numéro Mobile Money (OM / MoMo) pour régler l'acompte.`;
-
-        const whatsappUrl2 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message2)}`;
-        window.open(whatsappUrl2, '_blank');
+    if (!fullname2 || !phone2) {
+        alert("Veuillez renseigner votre nom et votre numéro de téléphone.");
+        return;
     }
+
+    const service2 = serviceSelect2.value;
+    const selectedServiceOpt2 = serviceSelect2.options[serviceSelect2.selectedIndex];
+    const servicePrice2 = Number(selectedServiceOpt2.getAttribute('data-price2') || 0);
+
+    const zone2 = zoneSelect2.value;
+    const selectedZoneOpt2 = zoneSelect2.options[zoneSelect2.selectedIndex];
+    const transportPrice2 = Number(selectedZoneOpt2.getAttribute('data-transport2') || 0);
+
+    const landmark2 = document.getElementById('landmark2').value;
+    const date2 = document.getElementById('date2').value;
+    const time2 = document.getElementById('time2').value;
+    const totalAmount2 = servicePrice2 + transportPrice2;
+
+    const bookingId2 = "LUC" + Math.floor(1000 + Math.random() * 9000);
+
+    const bookingData = {
+        id: bookingId2,
+        vehicleType: "SUV / 4 x 4",
+        service: service2,
+        price: totalAmount2,
+        location: `${zone2} (${landmark2})`,
+        date: date2,
+        time: time2,
+        fullname: fullname2,
+        phone: phone2
+    };
+
+    await saveBookingToSheets(bookingData);
+
+    const message2 = `Bonjour LUCARN SERVICES SARL !\n\n` +
+        `Je souhaite valider ma réservation *#${bookingId2}* :\n\n` +
+        ` *Type de véhicule :* SUV / 4 x 4\n` +
+        ` *Prestation :* ${service2} (${servicePrice2.toLocaleString('fr-FR')} FCFA)\n` +
+        ` *Frais de déplacement :* ${transportPrice2.toLocaleString('fr-FR')} FCFA\n` +
+        ` *Montant Total :* ${totalAmount2.toLocaleString('fr-FR')} FCFA\n` +
+        ` *Client :* ${fullname2} (${phone2})\n` +
+        ` *Zone / Repère :* ${zone2} - ${landmark2}\n` +
+        ` *Date & Heure :* ${date2} à ${time2}\n\n` +
+        `Merci de me transmettre le numéro Mobile Money (OM / MoMo) pour régler l'acompte.`;
+
+    const whatsappUrl2 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message2)}`;
+    window.open(whatsappUrl2, '_blank');
+}
 
 
  function sendToWhatsApp3() {
@@ -277,6 +341,8 @@
         const whatsappUrl3 = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message3)}`;
         window.open(whatsappUrl3, '_blank');
     }
+
+
 
 
 
