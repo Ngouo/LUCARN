@@ -75,24 +75,24 @@
 </a>
 
      <!--  -->
-    <div class="offres p-2 mt-12 lg:p-20" data-theme="corporate">
+    <div class="offres p-2 mt-12 lg:p-10 lg:h-160" data-theme="corporate">
       <h1 class="text-4xl font-bold text-center">NOS OFFRES</h1>
 
-      <p class="w-85 mt-8 mx-auto text-lg text-justify">
-        Découvrez nos différentes formules de lavage,conçues pour répondre à chaque besoin
+      <p class="w-85 lg:w-full mt-8 mx-auto text-lg text-center">
+        Découvrez nos différentes formules de lavage, conçues pour répondre à chaque besoin
         et à chaque niveau d’entretien. <br> Du nettoyage rapide à la formule complète, nous proposons
         des prestations adaptées à votre véhicule, votre budget et vos exigences. <br> Choisissez simplement
         l’offre qui vous convient, nous nous chargeons du reste directement à votre domicile ou sur votre lieu de travail.    
       </p>
 
       <div class="lg:grid lg:grid-cols-3 w-full lg:p-6 lg:mx-auto mt-6 lg:w-9/10 gap-18">
-          <div class="card w-85 mx-auto lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
+          <div class="card w-85 h-95 mx-auto lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
               <div class="card-body">
                 <div class="">
                   <h2 class="text-2xl font-bold">LE LAVAGE CLASSIQUE</h2>
                   <h3 class="text-xl">(Express à domicile)</h3>
                 </div>
-                <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
+                <ul class="mt-6 flex flex-col gap-3 text-2xs font-bold">
                   <li>
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                     <span>Nettoyage extérieur</span>
@@ -120,13 +120,13 @@
               </div>
           </div>
 
-          <div class="card w-85 mx-auto mt-3 lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
+          <div class="card w-85 h-95 mx-auto mt-3 lg:w-85 bg-base-100 shadow-xl border-2 border-blue-200">
             <div class="card-body">
               <div class="">
                 <h2 class="text-2xl font-bold">LE GRAND NETTOYAGE</h2>
                 <p class="text-xl">Remise en état</p>
               </div>
-              <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
+              <ul class="mt-6 flex flex-col gap-3 text-2xs font-bold">
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                   <span>Lavage complet</span>
@@ -154,14 +154,14 @@
             </div>
           </div>
 
-          <div class="card w-85 mx-auto mt-3 lg:w-90 bg-base-100 shadow-xl border-2 border-blue-200">
+          <div class="card w-85 h-95 mx-auto mt-3 lg:w-90 bg-base-100 shadow-xl border-2 border-blue-200">
             <div class="card-body">
               <span class="badge badge-xs badge-warning">Most Popular</span>
               <div class="">
                 <h2 class="text-2xl font-bold">ABONNEMENT MENSUEL</h2>
                 <p class="text-xl">Tranquillité</p>
               </div>
-              <ul class="mt-6 flex flex-col gap-2 text-2xs font-bold">
+              <ul class="mt-6 flex flex-col gap-3 text-2xs font-bold">
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
                   <span>Jusqu’à 4 lavages par mois</span>
@@ -189,180 +189,26 @@
     </div>
      <!--  -->
 
-     <div class="boutique">
-        <h1 class="text-3xl text-center font-bold">Visitez notre boutique</h1>
+        <!-- Partie 3 -->
+      <div class="mt-15 lg:h-170 bg-gray-50">
+          <h1 class="text-3xl lg:text-4xl font-bold mt-5 lg:p-8 text-center">NOS ENGAGEMENTS</h1>
+          <div class=" grid grid-cols-2 lg:mt-8 mt-12 lg:grid lg:grid-cols-3 mb-2 gap-1 lg:gap-5">
 
-        <!-- Section Carrousel d'Articles -->
-<section class="w-full max-w-6xl mx-auto py-12 px-4 overflow-hidden">
-  <div class="flex items-center justify-between mb-8">
-    <h2 class="text-2xl lg:text-3xl font-bold text-base-content">Nos Formules & Services</h2>
-    <div class="flex gap-2">
-      <button id="prev-btn" class="btn btn-circle btn-outline btn-sm">❮</button>
-      <button id="next-btn" class="btn btn-circle btn-outline btn-sm">❯</button>
-    </div>
-  </div>
-
-  <!-- Fenêtre d'affichage (Masque le débordement) -->
-  <div class="overflow-hidden w-full rounded-2xl" id="carousel-viewport">
-    
-    <!-- Piste défilante (Track) -->
-    <div id="carousel-track" class="flex gap-6 will-change-transform">
-      
-      <!-- Article 1 -->
-      <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
-        <figure class="h-48 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=600" alt="Lavage Express" class="w-full h-full object-cover" />
-        </figure>
-        <div class="card-body p-5">
-          <span class="badge badge-primary badge-sm">Lavage Auto</span>
-          <h3 class="card-title text-lg">Formule Express</h3>
-          <p class="text-sm text-base-content/70">Nettoyage extérieur complet et finition brillante en 30 min.</p>
-          <div class="card-actions justify-end mt-4">
-            <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Article 2 -->
-      <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
-        <figure class="h-48 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=600" alt="Lavage Intérieur" class="w-full h-full object-cover" />
-        </figure>
-        <div class="card-body p-5">
-          <span class="badge badge-secondary badge-sm">Premium</span>
-          <h3 class="card-title text-lg">Nettoyage Complet</h3>
-          <p class="text-sm text-base-content/70">Lavage intérieur/extérieur avec aspiration et traitement des sièges.</p>
-          <div class="card-actions justify-end mt-4">
-            <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Article 3 -->
-      <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
-        <figure class="h-48 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=600" alt="Nettoyage Canapé" class="w-full h-full object-cover" />
-        </figure>
-        <div class="card-body p-5">
-          <span class="badge badge-accent badge-sm">Mobilier</span>
-          <h3 class="card-title text-lg">Shampooing Canapés</h3>
-          <p class="text-sm text-base-content/70">Désinfection et nettoyage en profondeur de vos canapés en tissu.</p>
-          <div class="card-actions justify-end mt-4">
-            <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Article 4 -->
-      <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
-        <figure class="h-48 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600" alt="Nettoyage Tapis" class="w-full h-full object-cover" />
-        </figure>
-        <div class="card-body p-5">
-          <span class="badge badge-ghost badge-sm">Maison</span>
-          <h3 class="card-title text-lg">Lavage Tapis</h3>
-          <p class="text-sm text-base-content/70">Lavage haute pression et séchage rapide pour tous types de tapis.</p>
-          <div class="card-actions justify-end mt-4">
-            <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-     </div>
-
-    <!-- Partie 2 -->
-      <div class="partie4 lg:h-135 h-230 p-2  lg:mt-10 mt-16 border" data-theme="night">
-          <h1 class="titre font-extrabold text-center lg:text-4xl text-4xl">CE QUE NOUS VOUS PROPOSONS</h1>
-        
-          <div class="mx-auto w-full p-5 lg:flex lg:flex-cols-2 gap-6">
-          <!-- 1. BARRE DE 5 BOUTONS -->
-            <div class="flex flex-col justify-center gap-5 lg:w-1/2 w-full">     
-              <!-- Attribut data-target servant d'identifiant vers le contenu -->
-              <button data-target="content-1" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start active">
-                Injecteur - Extracteur
-              </button>
-              <button data-target="content-2" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start">
-                Detailling
-              </button>
-              <button data-target="content-3" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start">
-                Aspirateur Eau/Poussière
-              </button>
-              <button data-target="content-4" class="tab-btn btn btn-outline mx-auto btn-primary w-85 lg:w-2/3 h-12 text-left justify-start">
-                Traitement Anti-odeurs
-              </button>
-            </div>
-
-          <!-- 2. ZONE D'AFFICHAGE UNIQUE (Les contenus s'affichent à cette exacte position) -->
-            <div class="lg:w-2/3 w-85 text-center md:col-span-2 bg-base-100 mx-auto mt-8 rounded-2xl shadow-xl">
-              
-              <!-- CONTENU 1 (Visible par défaut) -->
-              <div id="content-1" class="content-block w-85 space-y-1">
-                <h3 class="text-2xl font-bold text-primary">Lavage en profondeur des sièges</h3>
-                 <div class="lg:w-4/5 lg:h-15 lg:mx-auto">
-                   <p class="text-base-content/80 text-justify">On aspire la saleté et la sueur incrustées dans le tissu. Vos sièges ressortent secs, propres et sans odeur.</p>
-                </div>            
-                <div class="w-full lg:mt-2 mx-auto h-60 lg:h-1/2">
-                  <img src="./images/img2.jpg" class="w-full mx-auto h-60 rounded-2xl"  alt="">
-                </div>
-              </div>
-
-              <!-- CONTENU 2 (Caché par 'hidden') -->
-              <div id="content-2" class="content-block w-85 hidden space-y-3">
-                <h3 class="text-2xl font-bold text-secondary">Remise à neuf complète</h3>
-                <div class="lg:w-4/5 lg:h-15 lg:mx-auto">
-                    <p class="text-base-content/80">On ne fait pas un simple lavage de surface. On nettoie votre voiture dans les moindres détails, comme si elle sortait de la concession.</p>
-                </div>
-                <div class="w-full mx-auto h-60 lg:h-1/2"><img src="./images/img2.jpg" class="w-full h-60 rounded-2xl"  alt=""></div>
-              </div>
-
-              <!-- CONTENU 3 -->
-              <div id="content-3" class="content-block w-85 hidden space-y-3">
-                <h3 class="text-2xl font-bold text-accent">Propreté garantie chez vous</h3>
-                <div class="lg:w-4/5 lg:h-15 lg:mx-auto">
-                    <p class="text-base-content/80 text-justify">On lave votre voiture chez vous et on aspire toute l'eau sale par terre. Votre cour reste 100 % propre.</p>
-                </div>
-                <div class="w-full mx-auto h-60 lg:h-1/2"><img src="./images/img2.jpg" class="w-full h-60 rounded-2xl"  alt=""></div>
-              </div>
-
-              <!-- CONTENU 4 -->
-              <div id="content-4" class="content-block w-85 hidden space-y-3">
-                <h3 class="text-2xl font-bold text-info">Désinfection & Fraîcheur</h3>
-                <div class="lg:w-4/5 lg:h-15 lg:mx-auto">
-                    <p class="text-base-content/80 text-justify">On élimine les odeurs de clim, d'humidité, de tabac ou de nourriture.</p>
-                </div>  
-                <div class="w-full mx-auto h-60 lg:h-1/2"><img src="./images/img2.jpg" class="w-full h-60 rounded-2xl"  alt=""></div>
-              </div>
-
-            </div>
-          </div>
-
-      </div>
-     
-    <!-- Fin Partie 2 -->
-
-    <!-- Partie 3 -->
-      <div class=" mt-15">
-          <h1 class="text-4xl font-bold text-center">NOS ENGAGEMENTS</h1>
-          <div class=" grid grid-cols-2 lg:mt-5 mt-12 lg:grid lg:grid-cols-3 mb-2 gap-2 lg:gap-5">
-
-            <div class="auto-hover-card card bg-base-100 w-95/100 h-60 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
-              <figure class="px-10 pt-5">
+            <div class="auto-hover-card card bg-base-100 w-43 h-55 lg:w-65 lg:h-60 lg:mb-0 mb-2 shadow-2xl mx-auto">
+              <figure class="pt-5">
                 <img
                   src="./src/images/accueil.png"
                   alt="Shoes"
                   class="rounded-xl w-10 h-10 " />
               </figure>
-              <div class="card-body items-center text-center">
-                <h3 class="card-title">Service à domicile</h3>
+              <div class="card-body items-center h-1/2 text-center">
+                <h3 class="card-title text-2xs font-bold">Service à domicile</h3>
                 <p>Nous nous déplaçons jusqu'à vous.</p>
               </div>
             </div>
 
-            <div class="auto-hover-card card bg-base-100 w-95/100 h-60 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
-              <figure class="px-10 pt-5">
+            <div class="auto-hover-card card bg-base-100 w-43 h-55 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
+              <figure class="pt-5">
                 <img
                   src="./src/images/horloge.png"
                   alt="Shoes"
@@ -374,7 +220,7 @@
               </div>
             </div>
 
-            <div class="auto-hover-card card bg-base-100 w-95/100  h-60 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="auto-hover-card card bg-base-100 w-43 h-55 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-5">
                 <img
                   src="./src/images/prestations-de-service.png"
@@ -387,7 +233,7 @@
               </div>
             </div>
 
-            <div class="auto-hover-card card bg-base-100 w-95/100  h-60 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
+            <div class="auto-hover-card card bg-base-100 w-43 h-55 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
               <figure class="px-10 pt-5">
                 <img
                   src="./src/images/reunion.png"
@@ -400,8 +246,8 @@
               </div>
             </div>
 
-            <div class="auto-hover-card card bg-base-100 w-95/100  h-60 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
-              <figure class="px-10 pt-10">
+            <div class="auto-hover-card card bg-base-100 w-43 h-55 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
+              <figure class="pt-15">
                 <img
                   src="./src/images/produits-de-nettoyage.png"
                   alt="Shoes"
@@ -413,14 +259,14 @@
               </div>
             </div>
 
-            <div class="auto-hover-card card bg-base-100 w-95/100  h-60 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
-              <figure class="px-10 pt-5">
+            <div class="auto-hover-card card bg-base-100 w-43 h-55 lg:w-65 lg:h-60 lg:mb-0  mb-2 shadow-2xl mx-auto">
+              <figure class="pt-2">
                 <img
                   src="./src/images/outils.png"
                   alt="Shoes"
                   class="rounded-xl w-10 h-10" />
               </figure>
-              <div class="card-body items-center text-center">
+              <div class="card-body items-center h-1 text-center">
                 <h3 class="card-title">Service personnalisé</h3>
                 <p>Prestations adaptées aux besoins de chaque client</p>
               </div>
@@ -432,8 +278,97 @@
       
      <!-- Fin Partie 3 -->
 
+     <div class="boutique mt-15">
+        <h1 class="lg:text-4xl text-3xl text-center font-bold">Visitez notre boutique !</h1>
+
+        <!-- Section Carrousel d'Articles -->
+        <section class="w-full max-w-6xl mx-auto py-12 px-4 overflow-hidden">
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-xl lg:text-2xl font-semibold text-base-content">Découvrez un apercu de nos produits :</h2>
+            <div class="flex gap-2">
+              <button id="prev-btn" class="btn btn-circle btn-outline btn-sm">❮</button>
+              <button id="next-btn" class="btn btn-circle btn-outline btn-sm">❯</button>
+            </div>
+          </div>
+
+          <!-- Fenêtre d'affichage (Masque le débordement) -->
+          <div class="overflow-hidden w-full rounded-2xl" id="carousel-viewport">
+            
+            <!-- Piste défilante (Track) -->
+            <div id="carousel-track" class="flex gap-6 will-change-transform">
+              
+              <!-- Article 1 -->
+              <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
+                <figure class="h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=600" alt="Lavage Express" class="w-full h-full object-cover" />
+                </figure>
+                <div class="card-body p-5">
+                  <span class="badge badge-primary badge-sm">Lavage Auto</span>
+                  <h3 class="card-title text-lg">Formule Express</h3>
+                  <p class="text-sm text-base-content/70">Nettoyage extérieur complet et finition brillante en 30 min.</p>
+                  <div class="card-actions justify-end mt-4">
+                    <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article 2 -->
+              <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
+                <figure class="h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=600" alt="Lavage Intérieur" class="w-full h-full object-cover" />
+                </figure>
+                <div class="card-body p-5">
+                  <span class="badge badge-secondary badge-sm">Premium</span>
+                  <h3 class="card-title text-lg">Nettoyage Complet</h3>
+                  <p class="text-sm text-base-content/70">Lavage intérieur/extérieur avec aspiration et traitement des sièges.</p>
+                  <div class="card-actions justify-end mt-4">
+                    <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article 3 -->
+              <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
+                <figure class="h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=600" alt="Nettoyage Canapé" class="w-full h-full object-cover" />
+                </figure>
+                <div class="card-body p-5">
+                  <span class="badge badge-accent badge-sm">Mobilier</span>
+                  <h3 class="card-title text-lg">Shampooing Canapés</h3>
+                  <p class="text-sm text-base-content/70">Désinfection et nettoyage en profondeur de vos canapés en tissu.</p>
+                  <div class="card-actions justify-end mt-4">
+                    <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Article 4 -->
+              <div class="carousel-item-card flex-none w-72 sm:w-80 card bg-base-100 shadow-xl border border-base-200">
+                <figure class="h-48 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600" alt="Nettoyage Tapis" class="w-full h-full object-cover" />
+                </figure>
+                <div class="card-body p-5">
+                  <span class="badge badge-ghost badge-sm">Maison</span>
+                  <h3 class="card-title text-lg">Lavage Tapis</h3>
+                  <p class="text-sm text-base-content/70">Lavage haute pression et séchage rapide pour tous types de tapis.</p>
+                  <div class="card-actions justify-end mt-4">
+                    <button onclick="booking_modal.showModal()" class="btn btn-primary btn-sm">Réserver</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <div class="w-full max-w-6xl text-2xs font-semibold mx-auto px-4 overflow-hidden">
+          Vous souhaitez consulter l"integralité des produits que nous commercialisons ? <br><br>
+          Cliquez ici : <a class="btn btn-success w-50 text-white font-bold" href="boutique.html">Notre Boutique</a>
+        </div>
+     </div>
+
      <!-- Partie 4 --> 
-      <div class="partenaires mt-25">
+      <div class="partenaires mt-20">
         <h1 class="text-4xl text-center font-bold">NOS PARTENAIRES</h1>
 
         <div class="w-full overflow-hidden bg-gray-50 py-6 mt-8">
@@ -474,6 +409,8 @@
      <!-- Fin Partie 4  -->
 
   </div>
+
+  <div id="footer-container"></div>
 
 
 
