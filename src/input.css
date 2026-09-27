@@ -29,6 +29,12 @@
   border-bottom: 2px solid #007bff;
 }
 
+/* Style visuel pour indiquer le lien actif */
+.menu-link1.active {
+  font-weight: bold;
+  background-color: #007bffc4;
+}
+
 .nav_menu{
     width: 70%;
 }
