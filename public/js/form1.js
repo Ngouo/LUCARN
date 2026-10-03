@@ -204,7 +204,7 @@ async function sendToWhatsApp() {
             const time2 = document.getElementById('time2').value;
             
 
-            if (!zoneSelect2 || landmark2 || !date2 || !time2) {
+            if (!zoneSelect2 || !landmark2 || !date2 || !time2) {
                 alert("Veuillez remplir le quartier, la date et l'heure.");
                 return;
             }
