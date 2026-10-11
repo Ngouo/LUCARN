@@ -1,6 +1,36 @@
 import anime from 'animejs/lib/anime.es.js'
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Configuration de l'observateur
+  const options = {
+    root: null, // utilise le viewport du navigateur
+    rootMargin: '0px',
+    threshold: 0.15 // déclenche quand 15% de l'élément est visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      // Si l'élément devient visible à l'écran
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        
+        // Optionnel : arrêter d'observer pour que l'animation ne se joue qu'une fois
+        observer.unobserve(entry.target);
+      }
+      else {
+        // L'élément sort de l'écran -> réinitialiser l'état initial
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, options);
+
+  // Cibler tous les éléments avec la classe .reveal
+  const elementsToReveal = document.querySelectorAll('.reveal');
+  elementsToReveal.forEach(el => observer.observe(el));
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
     
   const slides = document.querySelectorAll('#bg-slider .slide-bg');
   let currentSlideIndex = 0;

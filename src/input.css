@@ -8,6 +8,28 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* État de base : éléments cachés et décalés vers le bas */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* État activé au scroll : l'élément devient visible */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variantes optionnelles */
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal-right {
+  transform: translateX(50px);
+}
 
 #about{
     width: 500px;
